@@ -64,13 +64,13 @@
 						</div>
 						<!-- f-col -->
 						<div class="f-col">
-							<?php if ($show_messages) { ?>
+							<?php if ($last_5_messages) { ?>
 							<div class="row">
 								<h4 style="margin:0;padding:0;"><a href="#" id="messages_toggle" class="show-messages"><?php echo Kohana::lang('ui_main.show_messages');?></a>&nbsp;</h4>
 								<!--messages table goes here-->
 			                    <div id="show_messages">
 									<?php
-									foreach ($all_messages as $message) {
+									foreach ($last_5_messages as $message) {
 										echo "<div class=\"message\">";
 										echo "<strong><u>" . $message->message_from . "</u></strong> - ";
 										echo $message->message;
@@ -169,11 +169,11 @@
 			                    <div class="category">
                         	    <?php
 															$selected_categories = array();
-															if (!empty($form['incident_category']) && is_array($form['incident_category'])) {
-																$selected_categories = $form['incident_category'];
+															if (!empty($form['categories']) && is_array($form['categories'])) {
+																$selected_categories = $form['categories'];
 															}
 															$columns = 2;
-															echo category::tree($categories, $selected_categories, 'incident_category', $columns);
+															echo category::tree($categories, $selected_categories, 'categories', $columns);
 															?>
 			                        
 									<ul id="user_categories">
@@ -344,20 +344,17 @@
 							<div class="row link-row">
 								<h4><?php echo Kohana::lang('ui_main.reports_photos');?></h4>
 								<?php								
-    								if ($incident != "0")
-                        			{
-                        				// Retrieve Media
-                        				foreach($incident->media as $photo) 
-                        				{
-                        					if ($photo->media_type == 1)
-                        					{
-                        						print "<div class=\"report_thumbs\" id=\"photo_". $photo->id ."\">";
-                        						print "<img src=\"" . url::base() . "media/uploads/" . $photo->media_thumb . "\" >";
-                        						print "&nbsp;&nbsp;<a href=\"#\" onClick=\"deletePhoto('". $photo->id ."', 'photo_". $photo->id ."'); return false;\" >".Kohana::lang('ui_main.delete')."</a>";
-                        						print "</div>";
-                        					}
-                        				}
-                        			}
+    								// Retrieve Media
+                    				foreach($thumbs as $thumb) 
+                    				{
+                    					if ($thumb->media_type == 1)
+                    					{
+                    						print "<div class=\"report_thumbs\" id=\"photo_". $thumb->id ."\">";
+                    						print "<img src=\"" . url::base() . "media/uploads/" . $thumb->media_thumb . "\" >";
+                    						print "&nbsp;&nbsp;<a href=\"#\" onClick=\"deletePhoto('". $thumb->id ."', 'photo_". $thumb->id ."'); return false;\" >".Kohana::lang('ui_main.delete')."</a>";
+                    						print "</div>";
+                    					}
+                    				}
 			                    ?>
 							</div>
 							<div id="divPhoto">

@@ -20,5 +20,16 @@ class Verify_Model extends ORM
 	
 	// Database table name
 	protected $table_name = 'verified';
+	
+	public function __construct($id = null)
+	{
+		parent::__construct($id);
 
+		if ( ! $this->loaded)
+		{
+			// Set reasonable defaults
+			$this->user_id = $_SESSION['auth_user']->id; // This User
+			$this->verified_date = date("Y-m-d H:i:s",time()); // Now
+		}
+	}
 }
