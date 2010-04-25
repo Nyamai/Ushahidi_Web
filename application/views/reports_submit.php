@@ -20,7 +20,7 @@
 						<input type="hidden" name="latitude" id="latitude" value="<?php echo $form['latitude']; ?>">
 						<input type="hidden" name="longitude" id="longitude" value="<?php echo $form['longitude']; ?>">
 						<div class="big-block">
-							<h1><?php echo Kohana::lang('ui_main.reports_submit_new'); ?></h1>
+							<h1><?php echo tr('ui_main.reports_submit_new'); ?></h1>
 							<?php
 								if ($form_error) {
 							?>
@@ -45,21 +45,21 @@
 							</div>
 							<div class="report_left">
 								<div class="report_row">
-									<h4><?php echo Kohana::lang('ui_main.reports_title'); ?></h4>
+									<h4><?php echo tr('ui_main.reports_title'); ?></h4>
 									<?php print form::input('incident_title', $form['incident_title'], ' class="text long"'); ?>
 								</div>
 								<div class="report_row">
-									<h4><?php echo Kohana::lang('ui_main.reports_description'); ?></h4>
+									<h4><?php echo tr('ui_main.reports_description'); ?></h4>
 									<?php print form::textarea('incident_description', $form['incident_description'], ' rows="10" class="textarea long" ') ?>
 								</div>
 								<div class="report_row" id="datetime_default">
-									<h4><a href="#" id="date_toggle" class="show-more"><?php echo Kohana::lang('ui_main.modify_date'); ?></a><?php echo Kohana::lang('ui_main.date_time'); ?>: 
-										<?php echo Kohana::lang('ui_main.today_at')." "."<span id='current_time'>".$form['incident_hour']
+									<h4><a href="#" id="date_toggle" class="show-more"><?php echo tr('ui_main.modify_date'); ?></a><?php echo tr('ui_main.date_time'); ?>: 
+										<?php echo tr('ui_main.today_at')." "."<span id='current_time'>".$form['incident_hour']
 											.":".$form['incident_minute']." ".$form['incident_ampm']."</span>"; ?></h4>
 								</div>
 								<div class="report_row hide" id="datetime_edit">
 									<div class="date-box">
-										<h4><?php echo Kohana::lang('ui_main.reports_date'); ?></h4>
+										<h4><?php echo tr('ui_main.reports_date'); ?></h4>
 										<?php print form::input('incident_date', $form['incident_date'], ' class="text short"'); ?>								
 										<script type="text/javascript">
 											$().ready(function() {
@@ -72,7 +72,7 @@
 										</script>
 									</div>
 									<div class="time">
-										<h4><?php echo Kohana::lang('ui_main.reports_time'); ?></h4>
+										<h4><?php echo tr('ui_main.reports_time'); ?></h4>
 										<?php
 											for ($i=1; $i <= 12 ; $i++) { 
 												$hour_array[sprintf("%02d", $i)] = sprintf("%02d", $i);	 // Add Leading Zero
@@ -107,7 +107,7 @@ $("#incident_ampm option[value='"+ampm+"']").attr("selected","true");
 										</script>
 
 								<div class="report_row">
-									<h4><?php echo Kohana::lang('ui_main.reports_categories'); ?></h4>
+									<h4><?php echo tr('ui_main.reports_categories'); ?></h4>
 									<div class="report_category" id="categories">
 										<?php
 										$selected_categories = array();
@@ -161,17 +161,17 @@ $("#incident_ampm option[value='"+ampm+"']").attr("selected","true");
                                 </div>
 
 								<div class="report_optional">
-									<h3><?php echo Kohana::lang('ui_main.reports_optional'); ?></h3>
+									<h3><?php echo tr('ui_main.reports_optional'); ?></h3>
 									<div class="report_row">
-											 <h4><?php echo Kohana::lang('ui_main.reports_first'); ?></h4>
+											 <h4><?php echo tr('ui_main.reports_first'); ?></h4>
 											 <?php print form::input('person_first', $form['person_first'], ' class="text long"'); ?>
 									</div>
 									<div class="report_row">
-										<h4><?php echo Kohana::lang('ui_main.reports_last'); ?></h4>
+										<h4><?php echo tr('ui_main.reports_last'); ?></h4>
 										<?php print form::input('person_last', $form['person_last'], ' class="text long"'); ?>
 									</div>
 									<div class="report_row">
-										<h4><?php echo Kohana::lang('ui_main.reports_email'); ?></h4>
+										<h4><?php echo tr('ui_main.reports_email'); ?></h4>
 										<?php print form::input('person_email', $form['person_email'], ' class="text long"'); ?>
 									</div>
 								</div>
@@ -181,7 +181,7 @@ $("#incident_ampm option[value='"+ampm+"']").attr("selected","true");
 											{
 								?>
 								<div class="report_row">
-									<h4><?php echo Kohana::lang('ui_main.reports_find_location'); ?></h4>
+									<h4><?php echo tr('ui_main.reports_find_location'); ?></h4>
 									<?php print form::dropdown('select_city',$cities,'', ' class="select" '); ?>
 								</div>
 								<?php
@@ -190,21 +190,21 @@ $("#incident_ampm option[value='"+ampm+"']").attr("selected","true");
 								<div class="report_row">
 									<div id="divMap" class="report_map"></div>
 									<div class="report-find-location">
-										<?php print form::input('location_find', '', 'title='.Kohana::lang('ui_main.location_example').' class="findtext"'); ?>
-										<div style="float:left;margin:9px 0 0 5px;"><input type="button" name="button" id="button" value="<?php echo Kohana::lang('ui_main.find_location'); ?>" class="btn_find" /></div>
+										<?php print form::input('location_find', '', 'title='.tr('ui_main.location_example').' class="findtext"'); ?>
+										<div style="float:left;margin:9px 0 0 5px;"><input type="button" name="button" id="button" value="<?php echo tr('ui_main.find_location'); ?>" class="btn_find" /></div>
 										<div id="find_loading" class="report-find-loading"></div>
-										<div style="clear:both;" id="find_text"><?php echo Kohana::lang('ui_main.pinpoint_location'); ?>.</div>
+										<div style="clear:both;" id="find_text"><?php echo tr('ui_main.pinpoint_location'); ?>.</div>
 									</div>
 								</div>
 								
 								<div class="report_row">
-									<h4><?php echo Kohana::lang('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
+									<h4><?php echo tr('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo tr('ui_main.detailed_location_example'); ?></span></h4>
 									<?php print form::input('location_name', $form['location_name'], ' class="text long"'); ?>
 								</div>
 			
 								<!-- News Fields -->
 								<div id="divNews" class="report_row">
-									<h4><?php echo Kohana::lang('ui_main.reports_news'); ?></h4>
+									<h4><?php echo tr('ui_main.reports_news'); ?></h4>
 									<?php
 										$this_div = "divNews";
 										$this_field = "incident_news";
@@ -241,7 +241,7 @@ $("#incident_ampm option[value='"+ampm+"']").attr("selected","true");
 			
 								<!-- Video Fields -->
 								<div id="divVideo" class="report_row">
-									<h4><?php echo Kohana::lang('ui_main.reports_video'); ?></h4>
+									<h4><?php echo tr('ui_main.reports_video'); ?></h4>
 									<?php
 										$this_div = "divVideo";
 										$this_field = "incident_video";
@@ -278,7 +278,7 @@ $("#incident_ampm option[value='"+ampm+"']").attr("selected","true");
 	
 								<!-- Photo Fields -->
 								<div id="divPhoto" class="report_row">
-									<h4><?php echo Kohana::lang('ui_main.reports_photos'); ?></h4>
+									<h4><?php echo tr('ui_main.reports_photos'); ?></h4>
 									<?php
 										$this_div = "divPhoto";
 										$this_field = "incident_photo";
@@ -317,7 +317,7 @@ $("#incident_ampm option[value='"+ampm+"']").attr("selected","true");
 								</div>
 													
 								<div class="report_row">
-									<input name="submit" type="submit" value="<?php echo Kohana::lang('ui_main.reports_btn_submit'); ?>" class="btn_submit" /> 
+									<input name="submit" type="submit" value="<?php echo tr('ui_main.reports_btn_submit'); ?>" class="btn_submit" /> 
 								</div>
 							</div>
 						</div>

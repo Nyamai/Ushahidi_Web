@@ -138,7 +138,7 @@ class J2me_Controller extends Controller
 	   		if (curl_errno($ch))
 			{
 	       		print curl_error($ch);
-	       		print Kohana::lang('ui_admin.error_post_incident');
+	       		print tr('ui_admin.error_post_incident');
 	   		}
 			else
 			{
@@ -148,7 +148,7 @@ class J2me_Controller extends Controller
 		}
 		else
 		{
-			echo Kohana::lang('ui_admin.error_geocoding').' '.substr($data,0,3);
+			echo tr('ui_admin.error_geocoding').' '.substr($data,0,3);
 		}
 	}
 

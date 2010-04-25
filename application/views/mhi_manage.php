@@ -18,7 +18,7 @@
 		
 		<h3>Your Sites</h3>
 		
-		<a href="<?php echo url::base() ?>mhi/logout"><?php echo Kohana::lang('ui_admin.logout');?></a>
+		<a href="<?php echo url::base() ?>mhi/logout"><?php echo tr('ui_admin.logout');?></a>
 
 		<a href="<?php echo url::base() ?>mhi/signup">Create New Instance</a>
 		

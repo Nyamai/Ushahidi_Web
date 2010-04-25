@@ -15,21 +15,21 @@
 ?>
 			<div class="bg">
 				<h2>
-					<a href="<?php echo url::base() . 'admin/manage' ?>"><?php echo Kohana::lang('ui_main.categories');?></a>
-					<a href="<?php echo url::base() . 'admin/manage/forms' ?>"><?php echo Kohana::lang('ui_main.forms');?></a>
-					<a href="<?php echo url::base() . 'admin/manage/organizations' ?>"><?php echo Kohana::lang('ui_main.organizations');?></a>
-					<a href="<?php echo url::base() . 'admin/manage/pages' ?>"><?php echo Kohana::lang('ui_main.pages');?></a>
-					<a href="<?php echo url::base() . 'admin/manage/feeds' ?>" class="active"><?php echo Kohana::lang('ui_main.news_feeds');?></a>
-					<span>(<a href="#add"><?php echo Kohana::lang('ui_main.add_new');?></a>)</span>
-					<a href="<?php echo url::base() . 'admin/manage/reporters' ?>"><?php echo Kohana::lang('ui_main.reporters');?></a>
+					<a href="<?php echo url::base() . 'admin/manage' ?>"><?php echo tr('ui_main.categories');?></a>
+					<a href="<?php echo url::base() . 'admin/manage/forms' ?>"><?php echo tr('ui_main.forms');?></a>
+					<a href="<?php echo url::base() . 'admin/manage/organizations' ?>"><?php echo tr('ui_main.organizations');?></a>
+					<a href="<?php echo url::base() . 'admin/manage/pages' ?>"><?php echo tr('ui_main.pages');?></a>
+					<a href="<?php echo url::base() . 'admin/manage/feeds' ?>" class="active"><?php echo tr('ui_main.news_feeds');?></a>
+					<span>(<a href="#add"><?php echo tr('ui_main.add_new');?></a>)</span>
+					<a href="<?php echo url::base() . 'admin/manage/reporters' ?>"><?php echo tr('ui_main.reporters');?></a>
 				</h2>
 			
 				<!-- tabs -->
 				<div class="tabs">
 					<!-- tabset -->
 					<ul class="tabset">
-						<li><a href="<?php echo url::base() . 'admin/manage/feeds' ?>"><?php echo Kohana::lang('ui_main.feeds');?></a></li>
-						<li><a href="<?php echo url::base() . 'admin/manage/feeds_items' ?>" class="active"><?php echo Kohana::lang('ui_main.feed_items');?></a></li>
+						<li><a href="<?php echo url::base() . 'admin/manage/feeds' ?>"><?php echo tr('ui_main.feeds');?></a></li>
+						<li><a href="<?php echo url::base() . 'admin/manage/feeds_items' ?>" class="active"><?php echo tr('ui_main.feed_items');?></a></li>
 					</ul>
 				
 					<!-- tab -->
@@ -43,8 +43,8 @@
 				?>
 					<!-- red-box -->
 					<div class="red-box">
-						<h3><?php echo Kohana::lang('ui_main.error');?></h3>
-						<ul><?php echo Kohana::lang('ui_main.select_one');?></ul>
+						<h3><?php echo tr('ui_main.error');?></h3>
+						<ul><?php echo tr('ui_main.select_one');?></ul>
 					</div>
 				<?php
 				}
@@ -53,7 +53,7 @@
 				?>
 					<!-- green-box -->
 					<div class="green-box" id="submitStatus">
-						<h3><?php echo Kohana::lang('ui_main.messages');?> <?php echo $form_action; ?> <a href="#" id="hideMessage" class="hide"><?php echo Kohana::lang('ui_main.hide_this_message');?></a></h3>
+						<h3><?php echo tr('ui_main.messages');?> <?php echo $form_action; ?> <a href="#" id="hideMessage" class="hide"><?php echo tr('ui_main.hide_this_message');?></a></h3>
 					</div>
 				<?php
 				}
@@ -67,9 +67,9 @@
 							<thead>
 								<tr>
 									<th class="col-1"><input id="checkallincidents" type="checkbox" class="check-box" onclick="CheckAll( this.id, 'item_id[]' )" /></th>
-									<th class="col-2"><?php echo Kohana::lang('ui_main.item_details');?></th>
-									<th class="col-3"><?php echo Kohana::lang('ui_main.date');?></th>
-									<th class="col-4"><?php echo Kohana::lang('ui_main.actions');?></th>
+									<th class="col-2"><?php echo tr('ui_main.item_details');?></th>
+									<th class="col-3"><?php echo tr('ui_main.date');?></th>
+									<th class="col-4"><?php echo tr('ui_main.actions');?></th>
 								</tr>
 							</thead>
 							<tfoot>
@@ -86,7 +86,7 @@
 								?>
 									<tr>
 										<td colspan="4" class="col">
-											<h3><?php echo Kohana::lang('ui_main.no_results');?></h3>
+											<h3><?php echo tr('ui_main.no_results');?></h3>
 										</td>
 									</tr>
 								<?php	
@@ -109,14 +109,14 @@
 										<td class="col-2">
 											<div class="post">
 												<h4><?php echo $item_title; ?></h4>
-												<p><a href="javascript:preview('feed_preview_<?php echo $item_id?>')"><?php echo Kohana::lang('ui_main.preview_item');?></a></p>
+												<p><a href="javascript:preview('feed_preview_<?php echo $item_id?>')"><?php echo tr('ui_main.preview_item');?></a></p>
 												<div id="feed_preview_<?php echo $item_id?>" style="display:none;">
 													<?php echo $item_description; ?>
 												</div>
 											</div>
 											<ul class="info">
-												<li class="none-separator"><?php echo Kohana::lang('ui_main.feed');?>: <strong><a href="<?php echo $item_link; ?>"><?php echo $feed_name; ?></a></strong>
-												<li><?php echo Kohana::lang('ui_main.geolocation_available');?>?: <strong><?php echo ($location_id) ? strtoupper(Kohana::lang('ui_main.yes')) : strtoupper(Kohana::lang('ui_main.no'));?></strong></li>
+												<li class="none-separator"><?php echo tr('ui_main.feed');?>: <strong><a href="<?php echo $item_link; ?>"><?php echo $feed_name; ?></a></strong>
+												<li><?php echo tr('ui_main.geolocation_available');?>?: <strong><?php echo ($location_id) ? strtoupper(tr('ui_main.yes')) : strtoupper(tr('ui_main.no'));?></strong></li>
 											</ul>
 										</td>
 										<td class="col-3"><?php echo $item_date; ?></td>
@@ -124,15 +124,15 @@
 											<ul>
 												<?php
 												if ($incident_id != 0) {
-													echo "<li class=\"none-separator\"><a href=\"". url::base() . 'admin/reports/edit/' . $incident_id ."\" class=\"status_yes\"><strong>".Kohana::lang('ui_main.view_report')."</strong></a></li>";
+													echo "<li class=\"none-separator\"><a href=\"". url::base() . 'admin/reports/edit/' . $incident_id ."\" class=\"status_yes\"><strong>".tr('ui_main.view_report')."</strong></a></li>";
 												}
 												else
 												{
-													echo "<li class=\"none-separator\"><a href=\"".url::base().'admin/reports/edit?fid='.$item_id."\">".Kohana::lang('ui_main.create_report')."?</a></li>";
+													echo "<li class=\"none-separator\"><a href=\"".url::base().'admin/reports/edit?fid='.$item_id."\">".tr('ui_main.create_report')."?</a></li>";
 												}
 												?>
 												<li>
-                                                <a href="<?php echo url::base().'admin/manage/feeds_delete/'.$item_id ?>" onclick="return confirm(<?php echo Kohana::lang('ui_main.action_confirm');?>)" class="del"><?php echo Kohana::lang('ui_main.delete');?></a></li>
+                                                <a href="<?php echo url::base().'admin/manage/feeds_delete/'.$item_id ?>" onclick="return confirm(<?php echo tr('ui_main.action_confirm');?>)" class="del"><?php echo tr('ui_main.delete');?></a></li>
 											</ul>
 										</td>
 									</tr>

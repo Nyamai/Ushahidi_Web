@@ -84,11 +84,11 @@ class Reports_Controller extends Main_Controller {
 			$total_pages = ceil($pagination->total_items/ (int) Kohana::config('settings.items_per_page'));
 
 			if ($total_pages > 1) { // If we want to show pagination
-				$this->template->content->pagination_stats = Kohana::lang('ui_admin.showing_page').' '.$current_page.' '.Kohana::lang('ui_admin.of').' '.$total_pages.' '.Kohana::lang('ui_admin.pages');
+				$this->template->content->pagination_stats = tr('ui_admin.showing_page').' '.$current_page.' '.tr('ui_admin.of').' '.$total_pages.' '.tr('ui_admin.pages');
 
 				$this->template->content->pagination = $pagination;
 			} else { // If we don't want to show pagination
-				$this->template->content->pagination_stats = $pagination->total_items.' '.Kohana::lang('ui_admin.reports');
+				$this->template->content->pagination_stats = $pagination->total_items.' '.tr('ui_admin.reports');
 			}
 		} else {
 			$this->template->content->pagination_stats = '('.$pagination->total_items.' report'.$plural.')';
@@ -148,7 +148,7 @@ class Reports_Controller extends Main_Controller {
 		// Percent Verified
 
 		$total_verified = Incident_Model::get_total_reports_by_verified(true);
-		$percent_verified = round((($total_verified / $total_reports) * 100),2).'%';
+		$percent_verified = ($total_reports == 0) ? 'n/a' : round((($total_verified / $total_reports) * 100),2).'%';
 
 		$this->template->content->total_reports = $total_reports;
 		$this->template->content->avg_reports_per_day = $avg_reports_per_day;
@@ -643,8 +643,8 @@ class Reports_Controller extends Main_Controller {
 
 					$send = notifications::notify_admins(
 						"[".Kohana::config('settings.site_name')."] ".
-							Kohana::lang('notifications.admin_new_comment.subject'),
-							Kohana::lang('notifications.admin_new_comment.message')
+							tr('notifications.admin_new_comment.subject'),
+							tr('notifications.admin_new_comment.message')
 							."\n\n'".strtoupper($incident->incident_title)."'"
 							."\n".url::base().'reports/view/'.$id
 						);
@@ -887,7 +887,7 @@ class Reports_Controller extends Main_Controller {
 	private function _get_cities()
 	{
 		$cities = ORM::factory('city')->orderby('city', 'asc')->find_all();
-		$city_select = array('' => Kohana::lang('ui_main.reports_select_city'));
+		$city_select = array('' => tr('ui_main.reports_select_city'));
 
 		foreach ($cities as $city)
 		{

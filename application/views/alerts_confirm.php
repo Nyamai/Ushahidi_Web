@@ -25,21 +25,21 @@
 								<?php
 								if ($alert_mobile)
 								{
-									echo "<h3>".Kohana::lang('alerts.mobile_ok_head')."</h3>";
+									echo "<h3>".tr('alerts.mobile_ok_head')."</h3>";
 								}
 								?>
 								<div class="alert_response">
 									<?php 
 									if ($alert_mobile)
 									{
-										echo Kohana::lang('alerts.mobile_alert_request_created')."<u><strong>".
+										echo tr('alerts.mobile_alert_request_created')."<u><strong>".
 											$alert_mobile."</strong></u>.".
-											Kohana::lang('alerts.verify_code');
+											tr('alerts.verify_code');
 									}
 									?>
 									<div class="alert_confirm">
 										<div class="label">
-											<u><?php echo Kohana::lang('alerts.mobile_code'); ?></u>
+											<u><?php echo tr('alerts.mobile_code'); ?></u>
 										</div>
 										<?php 
 										print form::open('/alerts/verify');
@@ -59,7 +59,7 @@
 								<?php
 								if ($alert_email)
 								{
-									echo "<h3>".Kohana::lang('alerts.email_ok_head')."</h3>";
+									echo "<h3>".tr('alerts.email_ok_head')."</h3>";
 								}
 								?>
 								
@@ -67,14 +67,14 @@
 									<?php 
 									if ($alert_email)
 									{
-										echo Kohana::lang('alerts.email_alert_request_created')."<u><strong>".
+										echo tr('alerts.email_alert_request_created')."<u><strong>".
 											$alert_email."</strong></u>.".
-											Kohana::lang('alerts.verify_code');
+											tr('alerts.verify_code');
 									}
 									?>
 									<div class="alert_confirm">
 										<div class="label">
-											<u><?php echo Kohana::lang('alerts.email_code'); ?></u>
+											<u><?php echo tr('alerts.email_code'); ?></u>
 										</div>
 										<?php 
 										print form::open('/alerts/verify');
@@ -93,7 +93,7 @@
 							<div class="green-box">
 								<div class="alert_response">
 									<a href="<?php echo url::base().'alerts'?>">
-									<?php echo Kohana::lang('alerts.create_more_alerts'); ?>
+									<?php echo tr('alerts.create_more_alerts'); ?>
 									</a>
 								</div>
 							</div>

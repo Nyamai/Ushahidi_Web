@@ -34,26 +34,26 @@
 								</table>
 							</div>
 
-							<h1><?php echo Kohana::lang('ui_main.reports').": ";?> <?php echo ($category_title) ? " in $category_title" : ""?>
+							<h1><?php echo tr('ui_main.reports').": ";?> <?php echo ($category_title) ? " in $category_title" : ""?>
 								<?php echo $pagination_stats; ?></h1>
 
 							<div style="clear:both;"></div>
 
 							<div class="report_rowtitle">
 								<div class="report_col1">
-									<strong><?php echo strtoupper(Kohana::lang('ui_main.media'));?></strong>
+									<strong><?php echo strtoupper(tr('ui_main.media'));?></strong>
 								</div>
 								<div class="report_col2">
-									<strong><?php echo strtoupper(Kohana::lang('ui_main.report_title'));?></strong>
+									<strong><?php echo strtoupper(tr('ui_main.report_title'));?></strong>
 								</div>
 								<div class="report_col3">
-									<strong><?php echo strtoupper(Kohana::lang('ui_main.date'));?></strong>
+									<strong><?php echo strtoupper(tr('ui_main.date'));?></strong>
 								</div>
 								<div class="report_col4">
-									<strong><?php echo strtoupper(Kohana::lang('ui_main.location'));?></strong>
+									<strong><?php echo strtoupper(tr('ui_main.location'));?></strong>
 								</div>
 								<div class="report_col5">
-									<strong><?php echo strtoupper(Kohana::lang('ui_main.verified'));?>?</strong>
+									<strong><?php echo strtoupper(tr('ui_main.verified'));?>?</strong>
 								</div>
 							</div>
 							<?php

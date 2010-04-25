@@ -25,7 +25,7 @@ class Alerts_Controller extends Controller
 		$settings = kohana::config('settings');
 		$site_name = $settings['site_name'];
 		$alerts_email = $settings['alerts_email'];
-		$unsubscribe_message = Kohana::lang('alerts.unsubscribe')
+		$unsubscribe_message = tr('alerts.unsubscribe')
 								.url::site().'alerts/unsubscribe/';
 		$settings = NULL;
 		$sms_from = NULL;

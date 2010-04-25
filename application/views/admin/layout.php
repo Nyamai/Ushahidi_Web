@@ -116,39 +116,39 @@
 			<!-- top-area -->
 			<div class="top">
 				<strong>
-				<?php echo ucfirst(Kohana::lang('ui_admin.code')); ?> <?php echo Kohana::lang('ui_admin.version'); ?> <?php echo $code_version; ?>
-				<?php if($code_version != $actual_code_version) echo '<span>'.Kohana::lang('ui_admin.code_out_of_sync').' v'.$actual_code_version.'</span>'; ?>
+				<?php echo ucfirst(tr('ui_admin.code')); ?> <?php echo tr('ui_admin.version'); ?> <?php echo $code_version; ?>
+				<?php if($code_version != $actual_code_version) echo '<span>'.tr('ui_admin.code_out_of_sync').' v'.$actual_code_version.'</span>'; ?>
 				 - 
-				<?php echo ucfirst(Kohana::lang('ui_admin.database')); ?> <?php echo Kohana::lang('ui_admin.version'); ?> <?php echo $actual_db_version; ?>
-				<?php if($db_version != $actual_db_version) echo '<span>'.Kohana::lang('ui_admin.db_out_of_sync').' v'.$db_version.'</span>'; ?>
+				<?php echo ucfirst(tr('ui_admin.database')); ?> <?php echo tr('ui_admin.version'); ?> <?php echo $actual_db_version; ?>
+				<?php if($db_version != $actual_db_version) echo '<span>'.tr('ui_admin.db_out_of_sync').' v'.$db_version.'</span>'; ?>
 				</strong>
 				<ul>
-					<li class="none-separator"> <?php echo Kohana::lang('ui_admin.welcome');echo $admin_name; ?>!</li>
+					<li class="none-separator"> <?php echo tr('ui_admin.welcome');echo $admin_name; ?>!</li>
 					<li class="none-separator"><a href="<?php echo url::base() ?>" title="View the home page">
-						<?php echo Kohana::lang('ui_admin.view_site');?></a>					
-					<li class="none-separator"><a href="<?php echo url::base()."admin/profile/" ?>"><?php echo Kohana::lang('ui_admin.my_profile');?></a></li>
-					<li><a href="log_out"><?php echo Kohana::lang('ui_admin.logout');?></a></li>
+						<?php echo tr('ui_admin.view_site');?></a>					
+					<li class="none-separator"><a href="<?php echo url::base()."admin/profile/" ?>"><?php echo tr('ui_admin.my_profile');?></a></li>
+					<li><a href="log_out"><?php echo tr('ui_admin.logout');?></a></li>
 				</ul>
                         </div>
                         <?php if( ( $version != "" ) && ( url::current() != "admin/upgrade" ) ) { ?>
                         <div id="update-info">
                         Ushahidi <?php echo $version; ?> 
-                            <?php echo Kohana::lang('ui_admin.version_available');?> 
+                            <?php echo tr('ui_admin.version_available');?> 
         <a href="<?php echo url::base() ?>admin/upgrade" title="upgrade ushahidi">
-                             <?php echo Kohana::lang('ui_admin.update_link');?>
+                             <?php echo tr('ui_admin.update_link');?>
                             </a>.
                         </div>
                         <?php } ?>
 
 			<!-- info-nav -->
 			<div class="info-nav">
-				<h3><?php echo Kohana::lang('ui_admin.get_help');?></h3>
+				<h3><?php echo tr('ui_admin.get_help');?></h3>
 				<ul>
-					<li ><a href="http://wiki.ushahididev.com/"><?php echo Kohana::lang('ui_admin.wiki');?></a></li>
-					<li><a href="http://wiki.ushahididev.com/doku.php?id=how_to_use_ushahidi_alpha"><?php echo Kohana::lang('ui_admin.faqs');?></a></li>
-					<li><a href="http://forums.ushahidi.com/"><?php echo Kohana::lang('ui_admin.forum');?></a></li>
+					<li ><a href="http://wiki.ushahididev.com/"><?php echo tr('ui_admin.wiki');?></a></li>
+					<li><a href="http://wiki.ushahididev.com/doku.php?id=how_to_use_ushahidi_alpha"><?php echo tr('ui_admin.faqs');?></a></li>
+					<li><a href="http://forums.ushahidi.com/"><?php echo tr('ui_admin.forum');?></a></li>
 				</ul>
-				<div class="info-search"><form action="<?php echo url::base() ?>admin/reports" id="info-search"><input type="text" name="k" class="info-keyword" value=""> <a href="javascript:info_search();" class="btn"><?php echo Kohana::lang('ui_admin.search');?></a></form></div>
+				<div class="info-search"><form action="<?php echo url::base() ?>admin/reports" id="info-search"><input type="text" name="k" class="info-keyword" value=""> <a href="javascript:info_search();" class="btn"><?php echo tr('ui_admin.search');?></a></form></div>
 				<div style="clear:both"></div>
 			</div>
 			<!-- title -->

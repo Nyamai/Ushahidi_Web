@@ -90,12 +90,12 @@ class Admin_Controller extends Template_Controller
 		// Generate main tab navigation list.
 		// Key = Page (/admin/???), Val = Tab Name
 		$tabs = array(
-			'dashboard' => Kohana::lang('ui_admin.dashboard'),
-			'reports' => Kohana::lang('ui_admin.reports'),
-			'comments' => Kohana::lang('ui_admin.comments'),
-			'messages' => Kohana::lang('ui_admin.messages'),
-			'stats' => Kohana::lang('ui_admin.stats'),
-			'apilogs' => Kohana::lang('ui_admin.api_logs'),
+			'dashboard' => tr('ui_admin.dashboard'),
+			'reports' => tr('ui_admin.reports'),
+			'comments' => tr('ui_admin.comments'),
+			'messages' => tr('ui_admin.messages'),
+			'stats' => tr('ui_admin.stats'),
+			'apilogs' => tr('ui_admin.api_logs'),
 		);
 
         // Generate sub navigation list (in default layout, sits on right side.
@@ -103,14 +103,14 @@ class Admin_Controller extends Template_Controller
         $secondary_tabs = array();
         if($this->auth->logged_in('superadmin')){
         	$secondary_tabs = array(
-        		'settings/site' => Kohana::lang('ui_admin.settings'),
-        		'manage' => Kohana::lang('ui_admin.manage'),
-        		'users' => Kohana::lang('ui_admin.users')
+        		'settings/site' => tr('ui_admin.settings'),
+        		'manage' => tr('ui_admin.manage'),
+        		'users' => tr('ui_admin.users')
         	);
         }elseif($this->auth->logged_in('admin')){
         	$secondary_tabs = array(
-        		'manage' => Kohana::lang('ui_admin.manage'),
-        		'users' => Kohana::lang('ui_admin.users')
+        		'manage' => tr('ui_admin.manage'),
+        		'users' => tr('ui_admin.users')
         	);
         }
 
@@ -118,10 +118,12 @@ class Admin_Controller extends Template_Controller
         if(Kohana::config('config.enable_mhi') == TRUE && Kohana::config('settings.subdomain') == '') {
         	//Start from scratch on admin tabs since most are irrelevant
         	$tabs = array(
-				'mhi' => Kohana::lang('ui_admin.mhi'),
-				'stats' => Kohana::lang('ui_admin.stats'),
+				'mhi' => tr('ui_admin.mhi'),
+				'stats' => tr('ui_admin.stats'),
 			);
-			$secondary_tabs = array();
+			$secondary_tabs = array(
+        		'users' => tr('ui_admin.users')
+        	);
         }
 
         $this->template->tabs = $tabs;

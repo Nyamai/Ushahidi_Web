@@ -15,7 +15,7 @@
 ?>
 
 <div class="bg">
-	<h2><?php print $title; ?> <span></span><a href="<?php print url::base() ?>admin/reports/download"><?php echo Kohana::lang('ui_main.download_reports');?></a><a href="<?php print url::base() ?>admin/reports"><?php echo Kohana::lang('ui_main.view_reports');?></a><a href="<?php print url::base() ?>admin/reports/edit"><?php echo Kohana::lang('ui_main.create_report');?></a></h2>
+	<h2><?php print $title; ?> <span></span><a href="<?php print url::base() ?>admin/reports/download"><?php echo tr('ui_main.download_reports');?></a><a href="<?php print url::base() ?>admin/reports"><?php echo tr('ui_main.view_reports');?></a><a href="<?php print url::base() ?>admin/reports/edit"><?php echo tr('ui_main.create_report');?></a></h2>
 	<!-- report-form -->
 	<div class="report-form">
 		<?php
@@ -23,7 +23,7 @@
 		?>
 			<!-- red-box -->
 			<div class="red-box">
-				<h3><?php echo Kohana::lang('ui_main.error');?></h3>
+				<h3><?php echo tr('ui_main.error');?></h3>
 				<ul>
                 <?php
 				foreach ($errors as $error_item => $error_description)
@@ -38,24 +38,24 @@
 		?>
 		<!-- column -->
 		<div class="upload_container">
-		<p><?php echo Kohana::lang('ui_main.upload_reports_detail_1');?>.</p>
-		<h3><?php echo Kohana::lang('ui_main.please_note');?></h3>
+		<p><?php echo tr('ui_main.upload_reports_detail_1');?>.</p>
+		<h3><?php echo tr('ui_main.please_note');?></h3>
 		<ul>
-			<li><?php echo Kohana::lang('ui_main.upload_reports_detail_2');?>.</li>
-			<li><?php echo Kohana::lang('ui_main.upload_reports_detail_3');?>.</li>
-			<li><?php echo Kohana::lang('ui_main.upload_reports_detail_4');?></li>
+			<li><?php echo tr('ui_main.upload_reports_detail_2');?>.</li>
+			<li><?php echo tr('ui_main.upload_reports_detail_3');?>.</li>
+			<li><?php echo tr('ui_main.upload_reports_detail_4');?></li>
 		</ul>
 			<p>
-				<?php echo Kohana::lang('ui_main.upload_reports_detail_5');?>:
+				<?php echo tr('ui_main.upload_reports_detail_5');?>:
 				<p>
-					<?php echo Kohana::lang('ui_main.upload_reports_detail_6');?><br />
-					<?php echo Kohana::lang('ui_main.upload_reports_detail_7');?><br />
+					<?php echo tr('ui_main.upload_reports_detail_6');?><br />
+					<?php echo tr('ui_main.upload_reports_detail_7');?><br />
 					
 				</p>
 			</p>
 			<?php print form::open(NULL, array('id' => 'uploadForm', 'name' => 'uploadForm', 'enctype' => 'multipart/form-data')); ?>
-            <p><b><?php echo Kohana::lang('ui_main.upload_file');?></b> <?php echo form::upload(array('name' => 'csvfile'), 'path/to/local/file'); ?></p>
-			<button type="submit"><?php echo Kohana::lang('ui_main.upload');?></button>
+            <p><b><?php echo tr('ui_main.upload_file');?></b> <?php echo form::upload(array('name' => 'csvfile'), 'path/to/local/file'); ?></p>
+			<button type="submit"><?php echo tr('ui_main.upload');?></button>
 			<?php print form::close(); ?>
 		</div>
 	</div>

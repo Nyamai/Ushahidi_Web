@@ -242,7 +242,7 @@ class Alerts_Controller extends Main_Controller {
 	private function _get_cities()
 	{
 		$cities = ORM::factory('city')->orderby('city', 'asc')->find_all();
-		$city_select = array('' => Kohana::lang('ui_main.alerts_select_city'));
+		$city_select = array('' => tr('ui_main.alerts_select_city'));
 		foreach ($cities as $city) 
 		{
 			$city_select[$city->city_lon.",".$city->city_lat] = $city->city;
@@ -286,7 +286,7 @@ class Alerts_Controller extends Main_Controller {
 		$sms->password = $settings->clickatell_password;
 		$sms->use_ssl = false;
 		$sms->sms();
-		$message = Kohana::lang('ui_admin.confirmation_code').$alert_code.'. '.Kohana::lang('ui_admin.not_case_sensitive');
+		$message = tr('ui_admin.confirmation_code').$alert_code.'. '.tr('ui_admin.not_case_sensitive');
 	
 		if ($sms->send($alert_mobile, $sms_from, $message) == "OK")
 		{
@@ -314,8 +314,8 @@ class Alerts_Controller extends Main_Controller {
 		
 		$to = $alert_email;
 		$from = $settings['alerts_email'];
-		$subject = $settings['site_name']." ".Kohana::lang('alerts.verification_email_subject');
-		$message = Kohana::lang('alerts.confirm_request').url::site().'alerts/verify/'.$alert_code."/".$alert_email;
+		$subject = $settings['site_name']." ".tr('alerts.verification_email_subject');
+		$message = tr('alerts.confirm_request').url::site().'alerts/verify/'.$alert_code."/".$alert_email;
 
 		if (email::send($to, $from, $subject, $message, TRUE) == 1)
 		{

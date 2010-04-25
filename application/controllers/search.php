@@ -102,12 +102,12 @@ class Search_Controller extends Main_Controller {
 			if ($pagination->total_items != 0)
 			{			
 				$search_info .= "<div class=\"search_info\">";
-				$search_info .= Kohana::lang('ui_admin.showing_results').' '. ( $pagination->sql_offset + 1 ).' '.Kohana::lang('ui_admin.to').' '. ( (int) Kohana::config('settings.items_per_page') + $pagination->sql_offset ) .' '.Kohana::lang('ui_admin.of').' '. $pagination->total_items .' '.Kohana::lang('ui_admin.searching_for').'<strong>'. $keyword_raw . "</strong>";
+				$search_info .= tr('ui_admin.showing_results').' '. ( $pagination->sql_offset + 1 ).' '.tr('ui_admin.to').' '. ( (int) Kohana::config('settings.items_per_page') + $pagination->sql_offset ) .' '.tr('ui_admin.of').' '. $pagination->total_items .' '.tr('ui_admin.searching_for').'<strong>'. $keyword_raw . "</strong>";
 				$search_info .= "</div>";
 			} else { 
-				$search_info .= "<div class=\"search_info\">0 ".Kohana::lang('ui_admin.results')."</div>";
+				$search_info .= "<div class=\"search_info\">0 ".tr('ui_admin.results')."</div>";
 				$html .=	"<div class=\"search_result\">";
-				$html .= 	"<h3>".Kohana::lang('ui_admin.your_search_for')."<strong> ".$keyword_raw."</strong> ".Kohana::lang('ui_admin.match_no_documents')."</h3>";
+				$html .= 	"<h3>".tr('ui_admin.your_search_for')."<strong> ".$keyword_raw."</strong> ".tr('ui_admin.match_no_documents')."</h3>";
 				$html .=	"</div>";
 				$pagination = "";
 			}
@@ -154,16 +154,16 @@ class Search_Controller extends Main_Controller {
 				$html .=	"<div class=\"search_result\">";
 	            $html .=	"<h3><a href=\"" . url::base() . "reports/view/" . $incident_id . "\">" . $highlight_title . "</a></h3>";
 	            $html .=	$highlight_description . " ...";
-				$html .=	"<div class=\"search_date\">" . $incident_date . " | ".Kohana::lang('ui_admin.relevance').": <strong>+" . $search->relevance . "</strong></div>";
+				$html .=	"<div class=\"search_date\">" . $incident_date . " | ".tr('ui_admin.relevance').": <strong>+" . $search->relevance . "</strong></div>";
 				$html .=	"</div>";
 			}
 		}
 		else
 		{
 			// Results Bar
-			$search_info .= "<div class=\"search_info\">0 ".Kohana::lang('ui_admin.results')."</div>";
+			$search_info .= "<div class=\"search_info\">0 ".tr('ui_admin.results')."</div>";
 			$html .=	"<div class=\"search_result\">";
-			$html .= 	"<h3>".Kohana::lang('ui_admin.your_search_for')."<strong>".$keyword_raw."</strong> ".Kohana::lang('ui_admin.match_no_documents')."</h3>";
+			$html .= 	"<h3>".tr('ui_admin.your_search_for')."<strong>".$keyword_raw."</strong> ".tr('ui_admin.match_no_documents')."</h3>";
 			$html .=	"</div>";
 		}
 		$html .= $pagination;

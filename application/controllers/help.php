@@ -28,7 +28,7 @@ class Help_Controller extends Main_Controller
 	 */
 	public function index() 
 	{
-		$this->template->header->this_page = Kohana::lang('ui_admin.help');
+		$this->template->header->this_page = tr('ui_admin.help');
 		$this->template->content = new View('help');
 		$items_per_page = (int) Kohana::config('settings.items_per_page');
 		
@@ -68,7 +68,7 @@ class Help_Controller extends Main_Controller
 	 */
 	public function view($id = FALSE)
 	{
-		$this->template->header->this_page = Kohana::lang('ui_admin.help');
+		$this->template->header->this_page = tr('ui_admin.help');
 		$this->template->content = new View('help_view');
 		
 		if (!$id)
@@ -123,12 +123,12 @@ class Help_Controller extends Main_Controller
 					if (!empty($organization->organization_email)) {
 						$to = $organization->organization_email;
 						$from = $post->email;
-						$subject = Kohana::lang('ui_admin.sender').": ".Kohana::config('settings.site_name');
+						$subject = tr('ui_admin.sender').": ".Kohana::config('settings.site_name');
 						$message = "";
-						$message.= Kohana::lang('ui_admin.name').": ".$post->name."\n";
-						$message.= Kohana::lang('ui_admin.email').": ".$post->email."\n";
-						$message.= Kohana::lang('ui_admin.phone').": ".$post->phone."\n\n";
-						$message.= Kohana::lang('ui_admin.message').":\n".$post->message."\n";
+						$message.= tr('ui_admin.name').": ".$post->name."\n";
+						$message.= tr('ui_admin.email').": ".$post->email."\n";
+						$message.= tr('ui_admin.phone').": ".$post->phone."\n\n";
+						$message.= tr('ui_admin.message').":\n".$post->message."\n";
 
 						email::send($to, $from, $subject, $message, FALSE);
 					}

@@ -18,16 +18,16 @@
 					<div class="content-bg">
 						<!-- start reports block -->
 						<div class="big-block">
-							<h1><?php echo Kohana::lang('ui_admin.feeds').': '.$pagination_stats; ?></h1>
+							<h1><?php echo tr('ui_admin.feeds').': '.$pagination_stats; ?></h1>
 							<div class="report_rowtitle">
 								<div class="report_col2">
-									<strong><?php echo Kohana::lang('feeds.title');?></strong>
+									<strong><?php echo tr('feeds.title');?></strong>
 								</div>
 								<div class="report_col3">
-									<strong><?php echo Kohana::lang('feeds.date');?></strong>
+									<strong><?php echo tr('feeds.date');?></strong>
 								</div>
 								<div class="report_col4">
-									<strong><?php echo Kohana::lang('feeds.source');?></strong>
+									<strong><?php echo tr('feeds.source');?></strong>
 								</div>
 							</div>
 							<?php

@@ -14,15 +14,15 @@
  */
 ?>
 <div class="bg">
-	<h2><?php echo $title; ?> <a href="<?php print url::base() ?>admin/stats/hits"><?php echo Kohana::lang('stats.visitor_summary');?></a> <a href="<?php print url::base() ?>admin/stats/country"><?php echo Kohana::lang('stats.country_breakdown');?></a> <a href="<?php print url::base() ?>admin/stats/reports"><?php echo Kohana::lang('stats.report_stats');?></a> <a href="<?php print url::base() ?>admin/stats/impact"><?php echo Kohana::lang('stats.category_impact');?></a></h2>
+	<h2><?php echo $title; ?> <a href="<?php print url::base() ?>admin/stats/hits"><?php echo tr('stats.visitor_summary');?></a> <a href="<?php print url::base() ?>admin/stats/country"><?php echo tr('stats.country_breakdown');?></a> <a href="<?php print url::base() ?>admin/stats/reports"><?php echo tr('stats.report_stats');?></a> <a href="<?php print url::base() ?>admin/stats/impact"><?php echo tr('stats.category_impact');?></a></h2>
 	
 	<div class="content-wrap clearfix">
-        <h3><?php echo Kohana::lang('stats.category_impact');?></h3>
+        <h3><?php echo tr('stats.category_impact');?></h3>
         
         <div id="time-period-selector">
 			<p>
 				<form method="get" action="<?php print url::base() ?>admin/stats/impact/" style="display: inline;">
-					<?php echo Kohana::lang('stats.choose_date_range');?>: <a href="<?php print url::base() ?>admin/stats/impact/?range=30"><?php echo Kohana::lang('stats.time_range_1');?></a> <a href="<?php print url::base() ?>admin/stats/impact/?range=90"><?php echo Kohana::lang('stats.time_range_2');?></a> <a href="<?php print url::base() ?>admin/stats/impact/?range=180"><?php echo Kohana::lang('stats.time_range_3');?></a> <a href="<?php print url::base() ?>admin/stats/impact/"><?php echo Kohana::lang('stats.time_range_all');?></a>
+					<?php echo tr('stats.choose_date_range');?>: <a href="<?php print url::base() ?>admin/stats/impact/?range=30"><?php echo tr('stats.time_range_1');?></a> <a href="<?php print url::base() ?>admin/stats/impact/?range=90"><?php echo tr('stats.time_range_2');?></a> <a href="<?php print url::base() ?>admin/stats/impact/?range=180"><?php echo tr('stats.time_range_3');?></a> <a href="<?php print url::base() ?>admin/stats/impact/"><?php echo tr('stats.time_range_all');?></a>
 					<input type="text" class="dp" name="dp1" id="dp1" value="<?php echo $dp1; ?>" />&nbsp;&nbsp;-&nbsp;&nbsp; 
 					<input type="text" class="dp" name="dp2" id="dp2" value="<?php echo $dp2; ?>" />
 					<input type="hidden" name="range" value="<?php echo $range; ?>" />
@@ -33,10 +33,10 @@
         
         <!-- Left Column -->
         <div class="two-col tc-left reports-charts">
-        <p><?php echo Kohana::lang('stats.category_impact_description');?>.</p>
+        <p><?php echo tr('stats.category_impact_description');?>.</p>
             <div id="impact_info2" class="impact_hidden">
                 <div id="impact_legend2">&nbsp;</div>
-                <div id="impact_message2"><?php echo Kohana::lang('stats.legend');?></div>
+                <div id="impact_message2"><?php echo tr('stats.legend');?></div>
             </div>
             <div id="impact_placeholder"></div>
             <div id="impact_chart"></div>
@@ -47,11 +47,11 @@
         <div class="two-col tc-right stats-sidebar">
         	<div class="stats-wrapper clearfix">
                 <div class="statistic first">
-                    <h4><?php echo Kohana::lang('stats.reports');?></h4>
+                    <h4><?php echo tr('stats.reports');?></h4>
                     <p><?php echo $num_reports; ?></p>
                 </div>
                 <div class="statistic">
-                    <h4><?php echo Kohana::lang('stats.categories');?></h4>
+                    <h4><?php echo tr('stats.categories');?></h4>
                     <p><?php echo $num_categories; ?></p>
                 </div>
             </div>

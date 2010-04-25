@@ -76,11 +76,11 @@
                      ?>
                 	</p>
                 	<p>
-                    	<label for="username"><?php echo Kohana::lang('ui_main.username');?></label>
+                    	<label for="username"><?php echo tr('ui_main.username');?></label>
                     	<input name="username" class="text rounded" id="username" type="text" title="username" value="" />
                    	</p>
                     <p>
-                    	<label for="password"><?php echo Kohana::lang('ui_main.password');?></label>
+                    	<label for="password"><?php echo tr('ui_main.password');?></label>
                     	<input name="password" class="text rounded" id="password" type="password" title="password" value="" />
                    	</p>
                     <p>

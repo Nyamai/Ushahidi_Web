@@ -28,7 +28,7 @@
 							?>
 		          <div class="red-box">
 		            <div class="alert_response">
-		              <?php echo Kohana::lang('alerts.code_not_found'); ?>
+		              <?php echo tr('alerts.code_not_found'); ?>
 		            </div>
 		          </div>
 							<?php
@@ -39,7 +39,7 @@
 							?>
 		          <div class="red-box">
 		            <div class="alert_response" align="center">
-		              <?php echo Kohana::lang('alerts.code_already_verified'); ?>
+		              <?php echo tr('alerts.code_already_verified'); ?>
 		            </div>
 		          </div>
 							<?php
@@ -49,7 +49,7 @@
 							?>
 		          <div class="green-box">
 		            <div class="alert_response" align="center">
-		              <?php echo Kohana::lang('alerts.code_verified'); ?>
+		              <?php echo tr('alerts.code_verified'); ?>
 		            </div>
 		          </div>
 							<?php

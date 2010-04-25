@@ -18,7 +18,7 @@
 					<div class="content-bg">
 						<!-- start alerts block -->
 						<div class="big-block">
-							<h1><?php echo Kohana::lang('ui_main.alerts_get'); ?></h1>
+							<h1><?php echo tr('ui_main.alerts_get'); ?></h1>
 							<?php
 							if ($form_error) {
 							?>
@@ -40,9 +40,9 @@
 							?>
 							<?php print form::open() ?>
 							<div class="step-1">
-								<h2><?php echo Kohana::lang('ui_main.alerts_step1_select_city'); ?></h2>
+								<h2><?php echo tr('ui_main.alerts_step1_select_city'); ?></h2>
 								<div class="map">
-									<p><?php echo Kohana::lang('ui_main.alerts_place_spot'); ?></p>
+									<p><?php echo tr('ui_main.alerts_place_spot'); ?></p>
 									<div class="map-holder" id="divMap"></div>
 								</div>
 								<div class="report-find-location">
@@ -66,7 +66,7 @@
 							<input type="hidden" id="alert_lon" name="alert_lon" value="<?php echo $form['alert_lon']; ?>">
 							<div class="step-2-holder">
 								<div class="step-2">
-									<h2><?php echo Kohana::lang('ui_main.alerts_step2_send_alerts'); ?></h2>
+									<h2><?php echo tr('ui_main.alerts_step2_send_alerts'); ?></h2>
 									<div class="holder">
 										<div class="box">
 											<label>
@@ -80,7 +80,7 @@
 													}
 													print form::checkbox('alert_mobile_yes', '1', $checked);
 												?>
-												<span><strong><?php echo Kohana::lang('ui_main.alerts_mobile_phone'); ?></strong><br /><?php echo Kohana::lang('ui_main.alerts_enter_mobile'); ?></span>
+												<span><strong><?php echo tr('ui_main.alerts_mobile_phone'); ?></strong><br /><?php echo tr('ui_main.alerts_enter_mobile'); ?></span>
 											</label>
 											<span><?php print form::input('alert_mobile', $form['alert_mobile'], ' class="text long"'); ?></span>
 										</div>
@@ -96,15 +96,15 @@
 													}
 													print form::checkbox('alert_email_yes', '1', $checked);
 												?>
-												<span><strong><?php echo Kohana::lang('ui_main.alerts_email'); ?></strong><br /><?php echo Kohana::lang('ui_main.alerts_enter_email'); ?></span>
+												<span><strong><?php echo tr('ui_main.alerts_email'); ?></strong><br /><?php echo tr('ui_main.alerts_enter_email'); ?></span>
 											</label>
 											<span><?php print form::input('alert_email', $form['alert_email'], ' class="text long"'); ?></span>
 										</div>
 									</div>
 								</div>
-								<input id="btn-send-alerts" class="btn_submit" type="submit" value="<?php echo Kohana::lang('ui_main.alerts_btn_send'); ?>" />
+								<input id="btn-send-alerts" class="btn_submit" type="submit" value="<?php echo tr('ui_main.alerts_btn_send'); ?>" />
 								<BR /><BR />
-								<a href="<?php echo url::base()."alerts/confirm";?>"><?php echo Kohana::lang('ui_main.alert_confirm_previous'); ?></a>
+								<a href="<?php echo url::base()."alerts/confirm";?>"><?php echo tr('ui_main.alert_confirm_previous'); ?></a>
 							</div>
 							<?php print form::close(); ?>
 														<?php
@@ -113,7 +113,7 @@
 							?>
 							<div class="step-2-holder">
 								<div class="feed">
-									<h2><?php echo Kohana::lang('ui_main.alerts_rss'); ?></h2>
+									<h2><?php echo tr('ui_main.alerts_rss'); ?></h2>
 									<div class="holder">
 										<div class="box" style="text-align:center;">
 											<a href="<?php echo url::site(); ?>feed/"><img src="<?php echo url::base(); ?>media/img/icon-feed.png" style="vertical-align: middle;" border="0"></a>&nbsp;<strong><a href="<?php echo url::site(); ?>feed/"><?php echo url::site(); ?>feed/</a></strong>

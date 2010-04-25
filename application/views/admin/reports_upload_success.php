@@ -15,14 +15,14 @@
 ?>
 
 <div class="bg">
-	<h2><?php print $title; ?> <span></span><a href="<?php print url::base() ?>admin/reports/download"><?php echo Kohana::lang('ui_main.download_reports');?></a><a href="<?php print url::base() ?>admin/reports"><?php echo Kohana::lang('ui_main.view_reports');?></a><a href="<?php print url::base() ?>admin/reports/edit"><?php echo Kohana::lang('ui_main.create_report');?></a></h2>
+	<h2><?php print $title; ?> <span></span><a href="<?php print url::base() ?>admin/reports/download"><?php echo tr('ui_main.download_reports');?></a><a href="<?php print url::base() ?>admin/reports"><?php echo tr('ui_main.view_reports');?></a><a href="<?php print url::base() ?>admin/reports/edit"><?php echo tr('ui_main.create_report');?></a></h2>
 	
-	<h3><?php echo Kohana::lang('ui_main.upload_succesful');?></h3>
-	   <p><?php echo Kohana::lang('ui_main.succesfully_imported');?> <?php echo $imported; ?> of <?php echo $rowcount; ?> <?php echo Kohana::lang('ui_main.reports');?>.</p>
+	<h3><?php echo tr('ui_main.upload_succesful');?></h3>
+	   <p><?php echo tr('ui_main.succesfully_imported');?> <?php echo $imported; ?> of <?php echo $rowcount; ?> <?php echo tr('ui_main.reports');?>.</p>
 
 	
 	<?php if(count($notices)){  ?>  
-	<h3><?php echo Kohana::lang('ui_main.notices');?></h3>	
+	<h3><?php echo tr('ui_main.notices');?></h3>	
 		<ul>
 	<?php foreach($notices as $notice)  { ?>
 	<li><?php echo $notice ?></li>

@@ -15,12 +15,12 @@
 ?>
 			<div class="bg">
 				<h2><?php echo $title; ?> 
-					<a href="<?php echo url::base() . 'admin/settings/site' ?>"><?php echo Kohana::lang('ui_main.site');?></a>
-					<a href="<?php echo url::base() . 'admin/settings' ?>"><?php echo Kohana::lang('ui_main.map');?></a>
-					<a href="<?php echo url::base() . 'admin/settings/sms' ?>"><?php echo Kohana::lang('ui_main.sms');?></a>
-					<a href="<?php echo url::base() . 'admin/settings/sharing' ?>"><?php echo Kohana::lang('ui_main.sharing');?></a>
-					<a href="<?php echo url::base() . 'admin/settings/email' ?>" class="active"><?php echo Kohana::lang('ui_main.email');?></a>
-					<a href="<?php echo url::base() . 'admin/settings/themes' ?>"><?php echo Kohana::lang('ui_main.themes');?></a>
+					<a href="<?php echo url::base() . 'admin/settings/site' ?>"><?php echo tr('ui_main.site');?></a>
+					<a href="<?php echo url::base() . 'admin/settings' ?>"><?php echo tr('ui_main.map');?></a>
+					<a href="<?php echo url::base() . 'admin/settings/sms' ?>"><?php echo tr('ui_main.sms');?></a>
+					<a href="<?php echo url::base() . 'admin/settings/sharing' ?>"><?php echo tr('ui_main.sharing');?></a>
+					<a href="<?php echo url::base() . 'admin/settings/email' ?>" class="active"><?php echo tr('ui_main.email');?></a>
+					<a href="<?php echo url::base() . 'admin/settings/themes' ?>"><?php echo tr('ui_main.themes');?></a>
 				</h2>
 				<?php print form::open(); ?>
 				<div class="report-form">
@@ -29,7 +29,7 @@
 					?>
 						<!-- red-box -->
 						<div class="red-box">
-							<h3><?php echo Kohana::lang('ui_main.error');?></h3>
+							<h3><?php echo tr('ui_main.error');?></h3>
 							<ul>
 							<?php
 							foreach ($errors as $error_item => $error_description)
@@ -46,61 +46,61 @@
 					?>
 						<!-- green-box -->
 						<div class="green-box">
-							<h3><?php echo Kohana::lang('ui_main.configuration_saved');?></h3>
+							<h3><?php echo tr('ui_main.configuration_saved');?></h3>
 						</div>
 					<?php
 					}
 					?>				
 					<div class="head">
-						<h3><?php echo Kohana::lang('ui_main.email_configuration');?></h3>
+						<h3><?php echo tr('ui_main.email_configuration');?></h3>
 						<input type="image" src="<?php echo url::base() ?>media/img/admin/btn-cancel.gif" class="cancel-btn" />
 						<input type="image" src="<?php echo url::base() ?>media/img/admin/btn-save-settings.gif" class="save-rep-btn" />
 					</div>
 					<!-- column -->		
 					<div class="sms_holder">
-						<?php echo Kohana::lang('ui_main.email_settings_comment_00');?> <a href="<?php echo url::base()."admin/settings/site";?>"><?php echo Kohana::lang('ui_main.site_email_address');?></a> 
-						(<strong> <?php echo Kohana::config('settings.site_email');?></strong>), <?php echo Kohana::lang('ui_main.email_settings_comment_0');?>.
+						<?php echo tr('ui_main.email_settings_comment_00');?> <a href="<?php echo url::base()."admin/settings/site";?>"><?php echo tr('ui_main.site_email_address');?></a> 
+						(<strong> <?php echo Kohana::config('settings.site_email');?></strong>), <?php echo tr('ui_main.email_settings_comment_0');?>.
 						<div class="row">
-							<h4><?php echo Kohana::lang('ui_main.email_server_username');?></h4>
+							<h4><?php echo tr('ui_main.email_server_username');?></h4>
 							<?php print form::input('email_username', $form['email_username'], ' class="text long2"'); ?>
 						</div>
 						<span>
-							<?php echo Kohana::lang('ui_main.email_settings_comment_1');?>
+							<?php echo tr('ui_main.email_settings_comment_1');?>
 						</span>
 						<div class="row">
-							<h4><?php echo Kohana::lang('ui_main.email_server_password');?></h4>
+							<h4><?php echo tr('ui_main.email_server_password');?></h4>
 							<?php print form::password('email_password', $form['email_password'], ' class="text long2"'); ?>							
 						</div>
 						<span>
-							<?php echo Kohana::lang('ui_main.email_settings_comment_2');?>
+							<?php echo tr('ui_main.email_settings_comment_2');?>
 						</span>
 						<div class="row">
-							<h4><?php echo Kohana::lang('ui_main.email_server_port');?></h4>
+							<h4><?php echo tr('ui_main.email_server_port');?></h4>
 							<?php print form::input('email_port', $form['email_port'], ' class="text long2"'); ?>
 						</div>
 						<span>
-							<?php echo Kohana::lang('ui_main.email_settings_comment_3');?>
+							<?php echo tr('ui_main.email_settings_comment_3');?>
 						</span>
 						<div class="row">
-							<h4><?php echo Kohana::lang('ui_main.email_server_host');?></h4>
+							<h4><?php echo tr('ui_main.email_server_host');?></h4>
 							<?php print form::input('email_host', $form['email_host'], ' class="text long2"'); ?>
 						</div>
 						<span>
-							<?php echo Kohana::lang('ui_main.email_settings_comment_4');?>
+							<?php echo tr('ui_main.email_settings_comment_4');?>
 						</span>
 						<div class="row">
-							<h4><?php echo Kohana::lang('ui_main.email_server_type');?></h4>
+							<h4><?php echo tr('ui_main.email_server_type');?></h4>
 							<?php print form::input('email_servertype', $form['email_servertype'], ' class="text long2"'); ?>								 
 						</div>
 						<span>
-							<?php echo Kohana::lang('ui_main.email_settings_comment_5');?>
+							<?php echo tr('ui_main.email_settings_comment_5');?>
 						</span>
 						<div class="row">
-							<h4><?php echo Kohana::lang('ui_main.email_server_ssl_support');?></h4>
+							<h4><?php echo tr('ui_main.email_server_ssl_support');?></h4>
 								<?php print form::dropdown('email_ssl', $email_ssl_array, $form['email_ssl']); ?>
 						</div>
 						<span>
-							<?php echo Kohana::lang('ui_main.email_settings_comment_6');?>
+							<?php echo tr('ui_main.email_settings_comment_6');?>
 						</span>
 					</div>
 		

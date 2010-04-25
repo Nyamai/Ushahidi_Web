@@ -426,21 +426,21 @@ class Api_Controller extends Controller {
 	function _getErrorMsg($errcode, $param = '', $message=''){
 		switch($errcode){
 			case 0:
-				return array("code" => "0", "message" => Kohana::lang('ui_admin.no_error'));
+				return array("code" => "0", "message" => tr('ui_admin.no_error'));
 			case 001:
-				return array("code" => "001", "message" => Kohana::lang('ui_admin.missing_parameter')." - $param.");
+				return array("code" => "001", "message" => tr('ui_admin.missing_parameter')." - $param.");
 			case 002:
-				return array("code" => "002", "message" => Kohana::lang('ui_admin.invalid_parameter'));
+				return array("code" => "002", "message" => tr('ui_admin.invalid_parameter'));
 			case 003:
 				return array("code" => "003", "message" => $message );
 			case 004:
-				return array("code" => "004", "message" => Kohana::lang('ui_admin.post_method_not_used'));
+				return array("code" => "004", "message" => tr('ui_admin.post_method_not_used'));
 			case 005:
-				return array("code" => "005", "message" => Kohana::lang('ui_admin.access_denied_credentials'));
+				return array("code" => "005", "message" => tr('ui_admin.access_denied_credentials'));
 			case 006:
-				return array("code" => "006", "message" => Kohana::lang('ui_admin.access_denied_others'));			
+				return array("code" => "006", "message" => tr('ui_admin.access_denied_others'));			
 			default:
-				return array("code" => "999", "message" => Kohana::lang('ui_admin.not_found'));
+				return array("code" => "999", "message" => tr('ui_admin.not_found'));
 		}
 	}
 	
@@ -1708,8 +1708,8 @@ class Api_Controller extends Controller {
 				// Notify Admin Of New SMS Messages
 //				$send = notifications::notify_admins(
 //					"[".Kohana::config('settings.site_name')."] ".
-//						Kohana::lang('notifications.admin_new_sms.subject'),
-//					Kohana::lang('notifications.admin_new_sms.message')
+//						tr('notifications.admin_new_sms.subject'),
+//					tr('notifications.admin_new_sms.message')
 //					);
 					
 				// success!

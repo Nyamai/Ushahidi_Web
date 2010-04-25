@@ -19,14 +19,14 @@
 	<div class="tabs">
 		<!-- tabset -->
 		<ul class="tabset">
-			<li><a href="<?php echo url::base() ?>admin/apilogs" <?php if($this_page == "apilogs" ) echo "class=\"active\""; ?> ><?php echo Kohana::lang('ui_admin.logs');?></a></li>
-			<li><a href="<?php echo url::base() ?>admin/apilogs/apibanned" <?php if($this_page == "apibanned" ) echo "class=\"active\""; ?>><?php echo Kohana::lang('ui_admin.api_banned');?></a></li>
+			<li><a href="<?php echo url::base() ?>admin/apilogs" <?php if($this_page == "apilogs" ) echo "class=\"active\""; ?> ><?php echo tr('ui_admin.logs');?></a></li>
+			<li><a href="<?php echo url::base() ?>admin/apilogs/apibanned" <?php if($this_page == "apibanned" ) echo "class=\"active\""; ?>><?php echo tr('ui_admin.api_banned');?></a></li>
 		</ul>
 		<!-- tab -->
 		<div class="tab">
 			<ul>
-				<li><a href="#" onclick="apiLogAction('d','DELETE', '');"><?php echo Kohana::lang('ui_admin.delete_action');?></a></li>
-				<li><a href="#" onclick="apiLogAction('x','DELETE ALL ', '000');"><?php echo Kohana::lang('ui_admin.delete_all');?></a></li>
+				<li><a href="#" onclick="apiLogAction('d','DELETE', '');"><?php echo tr('ui_admin.delete_action');?></a></li>
+				<li><a href="#" onclick="apiLogAction('x','DELETE ALL ', '000');"><?php echo tr('ui_admin.delete_all');?></a></li>
 			</ul>
 		</div>
 	</div> 
@@ -36,8 +36,8 @@
 	?>
 		<!-- red-box -->
 		<div class="red-box">
-			<h3><?php echo Kohana::lang('ui_main.error');?></h3>
-			<ul><?php echo Kohana::lang('ui_main.select_one');?></ul>
+			<h3><?php echo tr('ui_main.error');?></h3>
+			<ul><?php echo tr('ui_main.select_one');?></ul>
 		</div>
 	<?php
 	}
@@ -47,7 +47,7 @@
 	?>
 		<!-- green-box -->
 		<div class="green-box" id="submitStatus">
-			<h3><?php echo Kohana::lang('ui_admin.api_logs');?> <?php echo $form_action; ?> <a href="#" id="hideMessage" class="hide"><?php echo Kohana::lang('ui_main.hide_this_message');?></a></h3>
+			<h3><?php echo tr('ui_admin.api_logs');?> <?php echo $form_action; ?> <a href="#" id="hideMessage" class="hide"><?php echo tr('ui_main.hide_this_message');?></a></h3>
 		</div>
 		<?php
 	}
@@ -62,12 +62,12 @@
 					<tr>
 						<th class="col-1">
 						<input id="checkallapilogs" type="checkbox" class="check-box" onclick="CheckAll( this.id, 'api_log_id[]' )" /></th>
-						<th class="col-2"><?php echo Kohana::lang('ui_admin.parameters_used');?></th>
-						<th class="col-3"><?php echo Kohana::lang('ui_admin.task_performed');?></th>
-						<th class="col-3"><?php echo Kohana::lang('ui_admin.total_records');?></th>
-						<th class="col-3"><?php echo Kohana::lang('ui_admin.ip_address');?></th>
-						<th class="col-3"><?php echo Kohana::lang('ui_admin.date_time');?></th>
-						<th class="col-4"><?php echo Kohana::lang('ui_admin.actions');?></th>
+						<th class="col-2"><?php echo tr('ui_admin.parameters_used');?></th>
+						<th class="col-3"><?php echo tr('ui_admin.task_performed');?></th>
+						<th class="col-3"><?php echo tr('ui_admin.total_records');?></th>
+						<th class="col-3"><?php echo tr('ui_admin.ip_address');?></th>
+						<th class="col-3"><?php echo tr('ui_admin.date_time');?></th>
+						<th class="col-4"><?php echo tr('ui_admin.actions');?></th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -84,7 +84,7 @@
 				?>
 						<tr>
 							<td colspan="7" class="col">
-								<h3><?php echo Kohana::lang('ui_admin.no_result_display_msg');?></h3>
+								<h3><?php echo tr('ui_admin.no_result_display_msg');?></h3>
 							</td>
 						</tr>
 					<?php	
@@ -107,7 +107,7 @@
 							<td class="col-3"><?php echo $api_date; ?></td>
 							<td class="col-4">
 								<ul>	
-								 <li><a href="#" class="del" onclick="apiLogAction('d','DELETE', '<?php echo $api_log_id; ?>');"><?php echo Kohana::lang('ui_admin.delete_action');?></a></li>
+								 <li><a href="#" class="del" onclick="apiLogAction('d','DELETE', '<?php echo $api_log_id; ?>');"><?php echo tr('ui_admin.delete_action');?></a></li>
 								</ul>
 							</td>
 						</tr>

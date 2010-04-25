@@ -171,7 +171,7 @@ class Clickatell_Core {
         if ($this->unicode == true) {
             $this->_chk_mbstring();
             if (mb_strlen ($text) > 210) {
-        	    return Kohana::lang('libraries.clickatell_unicode_message_too_long').mb_strlen ($text).")";
+        	    return tr('libraries.clickatell_unicode_message_too_long').mb_strlen ($text).")";
         	}
         	/* Does message need to be concatenate */
             if (mb_strlen ($text) > 70) {
@@ -181,7 +181,7 @@ class Clickatell_Core {
             }
         } else {
             if (strlen ($text) > 459) {
-    	        return Kohana::lang('libraries.clickatell_message_too_long').strlen ($text).")";
+    	        return tr('libraries.clickatell_message_too_long').strlen ($text).")";
     	    }
         	/* Does message need to be concatenate */
             if (strlen ($text) > 160) {
@@ -193,10 +193,10 @@ class Clickatell_Core {
 
     	/* Check $to and $from is not empty */
         if (empty ($to)) {
-    	    return Kohana::lang('libraries.clickatell_no_destination_address');
+    	    return tr('libraries.clickatell_no_destination_address');
     	}
         if (empty ($from)) {
-    	    return Kohana::lang('libraries.clickatell_no_sender_address');
+    	    return tr('libraries.clickatell_no_sender_address');
     	}
 
     	/* Reformat $to number */
@@ -290,7 +290,7 @@ class Clickatell_Core {
             return $this->_curl($command);
         if ($this->sending_method == "fopen")
             return $this->_fopen($command);
-        return Kohana::lang('libraries.clickatell_unsupported_method');
+        return tr('libraries.clickatell_unsupported_method');
     }
 
     /**
@@ -326,7 +326,7 @@ class Clickatell_Core {
             fclose ($handler);
             return $result;
         } else {
-            return Kohana::lang('libraries.clickatell_fopen_error');
+            return tr('libraries.clickatell_fopen_error');
         }
     }
 

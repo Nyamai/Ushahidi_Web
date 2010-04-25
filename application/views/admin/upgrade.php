@@ -18,11 +18,11 @@
 	<div class="table-holder">
    		<p>
     	<?php print form::open(NULL, array('id' => 'upgradeMain', 'name' => 'upgradeMain')); ?>
-      	<p><?php echo Kohana::lang('upgrade.upgrade_text_1');?>.<p>
+      	<p><?php echo tr('upgrade.upgrade_text_1');?>.<p>
 
-       	<p><?php echo Kohana::lang('upgrade.upgrade_text_2');?>.</p>
+       	<p><?php echo tr('upgrade.upgrade_text_2');?>.</p>
 
-       	<p><?php echo Kohana::lang('upgrade.upgrade_text_3');?>:<p>
+       	<p><?php echo tr('upgrade.upgrade_text_3');?>:<p>
        	<ul>
        		<li>
             	/applications/config
@@ -37,9 +37,9 @@
              	/media/uploads
           	</li>
         </ul>
-       	<p><?php echo Kohana::lang('upgrade.upgrade_text_4');?>.</p>
+       	<p><?php echo tr('upgrade.upgrade_text_4');?>.</p>
         
-        <p><?php echo Kohana::lang('upgrade.upgrade_text_5');?>.</p>
+        <p><?php echo tr('upgrade.upgrade_text_5');?>.</p>
         <p><input type="submit" id="upgrade" name="submit" value="Automatic Upgrade" class="login_btn" /></p>                
         <?php print form::close();?>                           
       </p>

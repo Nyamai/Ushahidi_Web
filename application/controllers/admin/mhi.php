@@ -31,7 +31,7 @@ class Mhi_Controller extends Admin_Controller
 	function index($page = 1)
 	{
 		$this->template->content = new View('admin/mhi');
-		$this->template->content->title = Kohana::lang('ui_admin.multiple_hosted_instances');
+		$this->template->content->title = tr('ui_admin.multiple_hosted_instances');
 		
 		$this->template->content->domain_name = $_SERVER['HTTP_HOST'];
 		
@@ -59,7 +59,7 @@ class Mhi_Controller extends Admin_Controller
 							$update->save();
 						}
 					}
-					$form_action = strtoupper(Kohana::lang('ui_admin.approved'));
+					$form_action = strtoupper(tr('ui_admin.approved'));
 				} elseif ($post->action == 'u') { // Unapprove Action
 					foreach($post->instance_id as $item) {
 						$update = new Mhi_Site_Model($item);
@@ -68,7 +68,7 @@ class Mhi_Controller extends Admin_Controller
 							$update->save();
 						}
 					}
-					$form_action = strtoupper(Kohana::lang('ui_admin.unapproved'));
+					$form_action = strtoupper(tr('ui_admin.unapproved'));
 				} elseif ($post->action == 'd'){	// Delete Action
 					foreach($post->instance_id as $item){
 						$update = new Mhi_Site_Model($item);
@@ -76,7 +76,7 @@ class Mhi_Controller extends Admin_Controller
 							$update->delete();
 						}					
 					}
-					$form_action = Kohana::lang('ui_admin.deleted');
+					$form_action = tr('ui_admin.deleted');
 				}
 				$form_saved = TRUE;
 			} else {

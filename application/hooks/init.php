@@ -15,5 +15,12 @@ if (!file_exists(DOCROOT."application/config/database.php"))
 	$installer =  "http://$url"."installer/";
 		
 	url::redirect($installer);
-	
+}
+
+/**
+* Global alias of the Kohana Lang Function
+*/
+function tr($key)
+{
+	return tr($key);
 }

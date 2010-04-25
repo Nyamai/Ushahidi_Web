@@ -37,7 +37,7 @@ class Settings_Controller extends Admin_Controller
 	function site()
 	{
 		$this->template->content = new View('admin/site');
-		$this->template->content->title = Kohana::lang('ui_admin.settings');
+		$this->template->content->title = tr('ui_admin.settings');
 
 		// setup and initialize form field names
 		$form = array
@@ -202,7 +202,7 @@ class Settings_Controller extends Admin_Controller
 		$this->template->content->form_error = $form_error;
 		$this->template->content->form_saved = $form_saved;
 		$this->template->content->items_per_page_array = array('10'=>'10 Items','20'=>'20 Items','30'=>'30 Items','50'=>'50 Items');
-		$this->template->content->yesno_array = array('1'=>strtoupper(Kohana::lang('ui_main.yes')),'0'=>strtoupper(Kohana::lang('ui_main.no')));
+		$this->template->content->yesno_array = array('1'=>strtoupper(tr('ui_main.yes')),'0'=>strtoupper(tr('ui_main.no')));
 		
 		// Generate Available Locales
 		$locales = $this->_get_i18n();
@@ -222,7 +222,7 @@ class Settings_Controller extends Admin_Controller
 		$current_country = Kohana::config('settings.default_country');
 
 		$this->template->content = new View('admin/settings');
-		$this->template->content->title = Kohana::lang('ui_admin.settings');
+		$this->template->content->title = tr('ui_admin.settings');
 
 		// setup and initialize form field names
 		$form = array
@@ -373,7 +373,7 @@ class Settings_Controller extends Admin_Controller
 	function sms()
 	{
 		$this->template->content = new View('admin/sms');
-		$this->template->content->title = Kohana::lang('ui_admin.settings');
+		$this->template->content->title = tr('ui_admin.settings');
 
 		// setup and initialize form field names
 		$form = array
@@ -474,7 +474,7 @@ class Settings_Controller extends Admin_Controller
 	function smsglobal()
 	{
 		$this->template->content = new View('admin/smsglobal');
-		$this->template->content->title = Kohana::lang('ui_admin.settings');
+		$this->template->content->title = tr('ui_admin.settings');
 
 		// setup and initialize form field names
 		$form = array
@@ -590,7 +590,7 @@ class Settings_Controller extends Admin_Controller
 	function email()
 	{
 		$this->template->content = new View('admin/email');
-		$this->template->content->title = Kohana::lang('ui_admin.settings');
+		$this->template->content->title = tr('ui_admin.settings');
 
 		// setup and initialize form field names
 		$form = array
@@ -688,7 +688,7 @@ class Settings_Controller extends Admin_Controller
 	    $this->template->content->errors = $errors;
 		$this->template->content->form_error = $form_error;
 		$this->template->content->form_saved = $form_saved;
-		$this->template->content->email_ssl_array = array('1'=>Kohana::lang('ui_admin.yes'),'0'=>Kohana::lang('ui_admin.no'));
+		$this->template->content->email_ssl_array = array('1'=>tr('ui_admin.yes'),'0'=>tr('ui_admin.no'));
 	}
 
 
@@ -767,15 +767,15 @@ class Settings_Controller extends Admin_Controller
 				$country->cities = $cities;
 				$country->save();
 
-				echo json_encode(array("status"=>"success", "response"=>"$cities ".Kohana::lang('ui_admin.cities_loaded')));
+				echo json_encode(array("status"=>"success", "response"=>"$cities ".tr('ui_admin.cities_loaded')));
 			}
 			else {
-				echo json_encode(array("status"=>"error", "response"=>"0 ".Kohana::lang('ui_admin.cities_loaded').". ".Kohana::lang('ui_admin.geonames_timeout')));
+				echo json_encode(array("status"=>"error", "response"=>"0 ".tr('ui_admin.cities_loaded').". ".tr('ui_admin.geonames_timeout')));
 			}
 		}
 		else
 		{
-			echo json_encode(array("status"=>"error", "response"=>"0 ".Kohana::lang('ui_admin.cities_loaded').". ".Kohana::lang('ui_admin.country_not_found')));
+			echo json_encode(array("status"=>"error", "response"=>"0 ".tr('ui_admin.cities_loaded').". ".tr('ui_admin.country_not_found')));
 		}
 	}
 	

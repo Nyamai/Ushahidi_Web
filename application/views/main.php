@@ -24,11 +24,11 @@
 					
 							<!-- category filters -->
 							<div class="cat-filters clearingfix">
-								<strong><?php echo Kohana::lang('ui_main.category_filter');?></strong>
+								<strong><?php echo tr('ui_main.category_filter');?></strong>
 							</div>
 						
 							<ul class="category-filters">
-								<li><a class="active" id="cat_0" href="#"><div class="swatch" style="background-color:#<?php echo $default_map_all;?>"></div><div class="category-title"><?php echo Kohana::lang('ui_main.all_categories');?></div></a></li>
+								<li><a class="active" id="cat_0" href="#"><div class="swatch" style="background-color:#<?php echo $default_map_all;?>"></div><div class="category-title"><?php echo tr('ui_main.all_categories');?></div></a></li>
 								<?php
 									foreach ($categories as $category => $category_info)
 									{
@@ -55,7 +55,7 @@
 								?>
 								<!-- Layers (KML/KMZ) -->
 								<div class="cat-filters clearingfix" style="margin-top:20px;">
-									<strong><?php echo Kohana::lang('ui_main.layers_filter');?></strong>
+									<strong><?php echo tr('ui_main.layers_filter');?></strong>
 								</div>
 								<ul class="category-filters">
 									<?php
@@ -84,25 +84,25 @@
 						
 							<!-- additional content -->
 							<div class="additional-content">
-								<h5><?php echo Kohana::lang('ui_main.how_to_report'); ?></h5>
+								<h5><?php echo tr('ui_main.how_to_report'); ?></h5>
 								<ol>
 									<?php if (!empty($phone_array)) 
-									{ ?><li><?php echo Kohana::lang('ui_main.report_option_1')." "; ?> <?php foreach ($phone_array as $phone) {
+									{ ?><li><?php echo tr('ui_main.report_option_1')." "; ?> <?php foreach ($phone_array as $phone) {
 										echo "<strong>". $phone ."</strong>";
 										if ($phone != end($phone_array)) {
 											echo " or ";
 										}
 									} ?></li><?php } ?>
 									<?php if (!empty($report_email)) 
-									{ ?><li><?php echo Kohana::lang('ui_main.report_option_2')." "; ?> <a href="mailto:<?php echo $report_email?>"><?php echo $report_email?></a></li><?php } ?>
+									{ ?><li><?php echo tr('ui_main.report_option_2')." "; ?> <a href="mailto:<?php echo $report_email?>"><?php echo $report_email?></a></li><?php } ?>
 									<?php if (!empty($twitter_hashtag_array)) 
-												{ ?><li><?php echo Kohana::lang('ui_main.report_option_3')." "; ?> <?php foreach ($twitter_hashtag_array as $twitter_hashtag) {
+												{ ?><li><?php echo tr('ui_main.report_option_3')." "; ?> <?php foreach ($twitter_hashtag_array as $twitter_hashtag) {
 									echo "<strong>". $twitter_hashtag ."</strong>";
 									if ($twitter_hashtag != end($twitter_hashtag_array)) {
 										echo " or ";
 									}
 									} ?></li><?php } ?>
-									<li><a href="<?php echo url::base() . 'reports/submit/'; ?>"><?php echo Kohana::lang('ui_main.report_option_4'); ?></a></li>
+									<li><a href="<?php echo url::base() . 'reports/submit/'; ?>"><?php echo tr('ui_main.report_option_4'); ?></a></li>
 								</ol>					
 		
 							</div>
@@ -118,20 +118,20 @@
 								<!-- filters -->
 								<div class="filters clearingfix">
 								<div style="float:left; width: 65%">
-									<strong><?php echo Kohana::lang('ui_main.filters'); ?></strong>
+									<strong><?php echo tr('ui_main.filters'); ?></strong>
 									<ul>
-										<li><a id="media_0" class="active" href="#"><span><?php echo Kohana::lang('ui_main.reports'); ?></span></a></li>
-										<li><a id="media_4" href="#"><span><?php echo Kohana::lang('ui_main.news'); ?></span></a></li>
-										<li><a id="media_1" href="#"><span><?php echo Kohana::lang('ui_main.pictures'); ?></span></a></li>
-										<li><a id="media_2" href="#"><span><?php echo Kohana::lang('ui_main.video'); ?></span></a></li>
-										<li><a id="media_0" href="#"><span><?php echo Kohana::lang('ui_main.all'); ?></span></a></li>
+										<li><a id="media_0" class="active" href="#"><span><?php echo tr('ui_main.reports'); ?></span></a></li>
+										<li><a id="media_4" href="#"><span><?php echo tr('ui_main.news'); ?></span></a></li>
+										<li><a id="media_1" href="#"><span><?php echo tr('ui_main.pictures'); ?></span></a></li>
+										<li><a id="media_2" href="#"><span><?php echo tr('ui_main.video'); ?></span></a></li>
+										<li><a id="media_0" href="#"><span><?php echo tr('ui_main.all'); ?></span></a></li>
 									</ul>
 </div>
 								<div style="float:right; width: 31%">
-									<strong><?php echo Kohana::lang('ui_main.views'); ?></strong>
+									<strong><?php echo tr('ui_main.views'); ?></strong>
 									<ul>
-										<li><a id="view_0" <?php if($map_enabled === 'streetmap') { echo 'class="active" '; } ?>href="#"><span><?php echo Kohana::lang('ui_main.clusters'); ?></span></a></li>
-										<li><a id="view_1" <?php if($map_enabled === '3dmap') { echo 'class="active" '; } ?>href="#"><span><?php echo Kohana::lang('ui_main.time'); ?></span></a></li>
+										<li><a id="view_0" <?php if($map_enabled === 'streetmap') { echo 'class="active" '; } ?>href="#"><span><?php echo tr('ui_main.clusters'); ?></span></a></li>
+										<li><a id="view_1" <?php if($map_enabled === '3dmap') { echo 'class="active" '; } ?>href="#"><span><?php echo tr('ui_main.time'); ?></span></a></li>
 </div>
 								</div>
 								<!-- / filters -->
@@ -181,13 +181,13 @@
 				
 						<!-- left content block -->
 						<div class="content-block-left">
-							<h5><?php echo Kohana::lang('ui_main.incidents_listed'); ?></h5>
+							<h5><?php echo tr('ui_main.incidents_listed'); ?></h5>
 							<table class="table-list">
 								<thead>
 									<tr>
-										<th scope="col" class="title"><?php echo Kohana::lang('ui_main.title'); ?></th>
-										<th scope="col" class="location"><?php echo Kohana::lang('ui_main.location'); ?></th>
-										<th scope="col" class="date"><?php echo Kohana::lang('ui_main.date'); ?></th>
+										<th scope="col" class="title"><?php echo tr('ui_main.title'); ?></th>
+										<th scope="col" class="location"><?php echo tr('ui_main.location'); ?></th>
+										<th scope="col" class="date"><?php echo tr('ui_main.date'); ?></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -224,13 +224,13 @@
 				
 						<!-- right content block -->
 						<div class="content-block-right">
-							<h5><?php echo Kohana::lang('ui_main.official_news'); ?></h5>
+							<h5><?php echo tr('ui_main.official_news'); ?></h5>
 							<table class="table-list">
 								<thead>
 									<tr>
-										<th scope="col"><?php echo Kohana::lang('ui_main.title'); ?></th>
-										<th scope="col"><?php echo Kohana::lang('ui_main.source'); ?></th>
-										<th scope="col"><?php echo Kohana::lang('ui_main.date'); ?></th>
+										<th scope="col"><?php echo tr('ui_main.title'); ?></th>
+										<th scope="col"><?php echo tr('ui_main.source'); ?></th>
+										<th scope="col"><?php echo tr('ui_main.date'); ?></th>
 									</tr>
 								</thead>
 								<tbody>
